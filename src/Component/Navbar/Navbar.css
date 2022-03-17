@@ -1,0 +1,18 @@
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 2px 3px 3px 3px gainsboro;
+  padding: 10px;
+}
+.navbar input {
+  box-shadow: 2px 2px 2px 2px gainsboro;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+.navbar input:focus {
+  outline: none;
+}
+.navbar img {
+  width: 50px;
+}

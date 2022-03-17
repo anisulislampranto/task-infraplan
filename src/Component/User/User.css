@@ -1,0 +1,10 @@
+.user {
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 1px 2px 2px 2px gainsboro;
+  border-radius: 10px;
+  display: flex;
+}
+.image {
+  border-radius: 40px;
+}
