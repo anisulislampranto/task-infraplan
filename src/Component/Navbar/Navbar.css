@@ -1,6 +1,6 @@
 .navbar {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   box-shadow: 2px 3px 3px 3px gainsboro;
   padding: 10px;
 }
