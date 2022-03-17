@@ -2,10 +2,14 @@ import React, { useEffect, useState } from "react";
 import User from "../User/User";
 import "./Users.css";
 import logo from "../../logo.svg";
+import Navbar from "../Navbar/Navbar";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  console.log(users);
 
   useEffect(() => {
     setLoading(true);
@@ -19,6 +23,7 @@ const Users = () => {
 
   return (
     <div>
+      <Navbar setSearchTerm={setSearchTerm} />
       {loading ? (
         <div
           style={{
@@ -32,9 +37,31 @@ const Users = () => {
         </div>
       ) : (
         <div className="users">
-          {users.map((user) => (
-            <User user={user} key={user.cell} />
-          ))}
+          {users
+            .filter((user) => {
+              if (
+                user.name.title
+                  .toLocaleLowerCase()
+                  .includes(searchTerm.toLocaleLowerCase())
+              ) {
+                return user;
+              } else if (
+                user.name.first
+                  .toLocaleLowerCase()
+                  .includes(searchTerm.toLocaleLowerCase())
+              ) {
+                return user;
+              } else if (
+                user.name.last
+                  .toLocaleLowerCase()
+                  .includes(searchTerm.toLocaleLowerCase())
+              ) {
+                return user;
+              }
+            })
+            .map((user) => (
+              <User user={user} key={user.cell} />
+            ))}
         </div>
       )}
     </div>

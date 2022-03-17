@@ -2,7 +2,6 @@ import React from "react";
 import "./User.css";
 
 const User = ({ user }) => {
-  console.log(user);
   return (
     <div style={{ display: "flex" }}>
       <div className="user">
